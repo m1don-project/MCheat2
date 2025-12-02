@@ -1,0 +1,21 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 4000
+  },
+  "security": {
+    "jwtAccessSecret": "change-this-access-secret",
+    "jwtRefreshSecret": "change-this-refresh-secret",
+    "accessTokenMinutes": 15,
+    "refreshTokenDays": 7,
+    "passwordSaltRounds": 10
+  },
+  "database": {
+    "filename": "license.db"
+  },
+  "defaults": {
+    "bootstrapAdminUsername": "m1don",
+    "bootstrapAdminPassword": "UTEsFSYXeDt6KNS"
+  }
+}
+

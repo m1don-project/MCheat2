@@ -1,0 +1,50 @@
+# Игнорировать все файлы
+*
+# Кроме нужных
+!.gitignore
+!MCheat.exe
+!version.txt
+
+# Разрешить папку site (веб-панель лицензий)
+!site/
+site/*
+!site/backend/
+site/backend/*
+!site/backend/**/*
+!site/public/
+site/public/*
+!site/public/**/*
+!site/config/
+site/config/*
+!site/config/**/*
+!site/*.md
+!site/*.toml
+!site/*.sh
+!site/*.ps1
+!site/Dockerfile
+!site/.dockerignore
+!site/.gitignore
+
+# Разрешить файлы интеграции MCheat
+!CS2Cheats/
+CS2Cheats/*
+!CS2Cheats/Helpers/
+CS2Cheats/Helpers/*
+!CS2Cheats/Helpers/LicenseManager.h
+!CS2Cheats/main.cpp
+!CS2Cheats/Core/
+CS2Cheats/Core/*
+!CS2Cheats/Core/Config.h
+
+# Разрешить скрипты и документацию
+!upload_license_panel.ps1
+!GITHUB_FLYIO_SETUP.md
+!QUICK_GUIDE.md
+
+# Игнорировать внутри разрешенных папок
+**/node_modules/
+**/*.db
+**/database/*.db
+**/.env
+**/.git/
+site/backend/package-lock.json

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лицензии | License Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body data-page="keys">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">License Panel</div>
+        <nav>
+          <a href="dashboard.html">Панель</a>
+          <a href="users.html">Пользователи</a>
+          <a href="keys.html" class="active">Лицензии</a>
+        </nav>
+        <button id="logoutBtn" class="btn ghost small">Выход</button>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <div>
+            <p class="muted small">Управление лицензиями</p>
+            <h1>Лицензионные ключи</h1>
+          </div>
+        </header>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Создать ключ</h2>
+          </div>
+          <form id="createKeyForm" class="grid-4" novalidate>
+            <label>
+              Срок (дней)
+              <input type="number" name="valid_days" min="1" placeholder="30" />
+            </label>
+            <label>
+              Конкретная дата
+              <input type="datetime-local" name="expires_at" />
+            </label>
+            <label>
+              HWID
+              <input type="text" name="hwid" placeholder="опционально" />
+            </label>
+            <label>
+              Комментарий
+              <input type="text" name="comment" />
+            </label>
+            <button type="submit" class="btn primary">Создать ключ</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Список ключей</h2>
+            <div class="search-group">
+              <input
+                type="search"
+                id="keySearch"
+                placeholder="Поиск по ключу или HWID"
+              />
+              <select id="keyStatusFilter">
+                <option value="">Все статусы</option>
+                <option value="new">new</option>
+                <option value="active">active</option>
+                <option value="blocked">blocked</option>
+              </select>
+              <button id="reloadKeysBtn" class="btn ghost small">Обновить</button>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ключ</th>
+                  <th>Статус</th>
+                  <th>До</th>
+                  <th>HWID</th>
+                  <th>Блок</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="keysTable">
+                <tr>
+                  <td colspan="6" class="muted">Нет данных</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>История активаций</h2>
+            <span id="historyKeyLabel" class="muted small">выберите ключ</span>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Дата</th>
+                  <th>HWID</th>
+                  <th>Действие</th>
+                  <th>Дополнительно</th>
+                </tr>
+              </thead>
+              <tbody id="historyTable">
+                <tr>
+                  <td colspan="4" class="muted">Нет данных</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+  </body>
+</html>
+

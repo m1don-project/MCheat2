@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Пользователи | License Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body data-page="users">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">License Panel</div>
+        <nav>
+          <a href="dashboard.html">Панель</a>
+          <a href="users.html" class="active">Пользователи</a>
+          <a href="keys.html">Лицензии</a>
+        </nav>
+        <button id="logoutBtn" class="btn ghost small">Выход</button>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <div>
+            <p class="muted small">Управление ролями</p>
+            <h1>Пользователи</h1>
+          </div>
+        </header>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Создать пользователя</h2>
+          </div>
+          <form id="createUserForm" class="grid-3" novalidate>
+            <label>
+              Логин
+              <input type="text" name="username" required />
+            </label>
+            <label>
+              Пароль
+              <input type="password" name="password" required />
+            </label>
+            <label>
+              Роль
+              <select name="role" required>
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+              </select>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="is_active" checked />
+              Активен сразу
+            </label>
+            <button type="submit" class="btn primary">Создать</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Список пользователей</h2>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Логин</th>
+                  <th>Роль</th>
+                  <th>Статус</th>
+                  <th>Создан</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="usersTable">
+                <tr>
+                  <td colspan="5" class="muted">Нет данных</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+  </body>
+</html>
+

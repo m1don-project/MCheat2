@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход | License Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="auth-body" data-page="login">
+    <div class="auth-card">
+      <h2>Панель лицензий</h2>
+      <form id="loginForm" novalidate>
+        <label>
+          Логин
+          <input type="text" name="username" required autocomplete="username" />
+        </label>
+        <label>
+          Пароль
+          <input
+            type="password"
+            name="password"
+            required
+            autocomplete="current-password"
+          />
+        </label>
+        <button type="submit" class="btn primary full">Войти</button>
+      </form>
+      <p class="muted small">Демо данные: admin / Admin@123</p>
+    </div>
+  </body>
+</html>
+

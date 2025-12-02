@@ -1,0 +1,32 @@
+# Зависимости
+node_modules/
+package-lock.json
+
+# База данных
+*.db
+*.sqlite
+*.sqlite3
+database/*.db
+
+# Логи
+*.log
+npm-debug.log*
+
+# Окружение
+.env
+.env.local
+
+# Временные файлы
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Fly.io
+.fly/
+
